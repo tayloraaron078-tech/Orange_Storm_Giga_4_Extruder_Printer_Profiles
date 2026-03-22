@@ -4,9 +4,40 @@ Community-made Orca Slicer profiles for the **Elegoo OrangeStorm Giga fitted wit
 
 These files exist to fill a gap: **Elegoo sells the 4 Extruder mod, but owners still end up needing to build their own slicer setup**. In practical terms, that means users are left without an official ready-to-import printer profile pack for Orca Slicer, and setup support for this specific workflow is minimal. This repo is meant to give OrangeStorm Giga 4E users a practical starting point instead of forcing them to start from scratch.
 
-These profiles are **not an official Elegoo release**. They are working baseline profiles intended to help you get the machine printing, then tune from there for your own hardware, materials, cooling, and quality targets.
+## Use at your own risk
 
-## What this repository includes
+**Importing or printing with anything in this repository is entirely at your own risk.** These are **not** official Elegoo profiles, and neither the author of this repo nor Elegoo is responsible for failed prints, crashes, bad offsets, heater issues, damaged parts, lost time, or wasted material. Always verify the setup on your own machine before trusting it with a long print.
+
+## What is in this repo?
+
+This repo is meant to help two kinds of users:
+
+1. **Beginners / quick-start users** who want the easiest path and do **not** want to review every profile file first.
+2. **Manual / advanced users** who prefer importing individual printer, process, and filament profiles separately and reviewing each part of the setup.
+
+### Quick and easy option: complete bundles
+
+If you downloaded one of the **complete exported bundles** for your nozzle size, that is the easiest beginner path.
+
+A complete bundle is intended to give you a mostly ready-to-go setup in one import so you do not have to manually sort through:
+
+- printer profile files
+- process profile files
+- filament profile files
+
+That makes the bundle option the best starting point for:
+
+- beginners
+- anyone setting up the printer fast
+- anyone who wants to get into Orca Slicer quickly without reviewing every profile first
+
+**Even with the complete bundles, you still use them at your own risk.** Before printing anything important, you should still confirm nozzle size, temperatures, first-layer behavior, bed heating, and tool behavior on your own machine.
+
+### Manual option: individual profile files
+
+If you prefer to build things up yourself, this repo also includes the individual profile files broken out into the normal Orca Slicer categories below.
+
+## Individual profile contents
 
 This repo is organized into three profile groups for Orca Slicer:
 
@@ -85,6 +116,19 @@ If you have the OrangeStorm Giga 4 Extruder hardware and do **not** want to star
 
 In short, this repo is best thought of as a **working starting point**, not a finished, universal, perfectly tuned profile set.
 
+## Beginner quick start
+
+If you want the fastest possible path and do not want to inspect every profile first:
+
+1. Pick the **complete bundle** that matches your nozzle size.
+2. Import that bundle into Orca Slicer.
+3. Select the imported printer and preset set.
+4. Confirm your nozzle size, filament temperatures, and first-layer settings.
+5. Run a very small test print first.
+6. Stay with the printer while it starts.
+
+This is the easiest route, but it is **not** the safest route unless you still do the basic sanity checks above.
+
 ## Important things to know before you print
 
 Please read this section before trusting any slicer preset on a large-format modified printer.
@@ -130,9 +174,9 @@ The included PLA, PETG, and ABS presets are not meant to replace proper material
 
 Before attempting a long or expensive print:
 
-1. Import only the nozzle size you actually have installed first.
-2. Import the process profiles for that same nozzle size.
-3. Import the filament profiles you actually plan to use.
+1. If you want the simplest path, start with the complete bundle for your nozzle size.
+2. If you prefer manual control, import only the nozzle size you actually have installed.
+3. Import the matching process profiles and the filament profiles you actually plan to use.
 4. Open the printer profile and review the machine start G-code.
 5. Confirm nozzle diameter, first layer height, and temperatures.
 6. Run a small first-layer test.
@@ -141,13 +185,21 @@ Before attempting a long or expensive print:
 
 ## How to import these into Orca Slicer
 
-### Option A: Import from the Orca Slicer menu
+### Option A: Import a complete bundle
+
+This is the recommended path for beginners and anyone who wants the quickest setup.
 
 1. Download or clone this repository.
 2. Open **Orca Slicer**.
 3. Go to **File -> Import -> Import Configs** (or the equivalent import-config menu in your Orca Slicer version).
-4. Browse to this repo.
-5. Import the files you want to use.
+4. Select the **complete bundle** for your nozzle size.
+5. Import it.
+6. Select the imported printer and presets.
+7. Double-check the basic machine and material settings before slicing.
+
+### Option B: Import the individual files manually
+
+Use this if you want more control or want to review the setup file by file.
 
 Recommended import order:
 
@@ -162,11 +214,11 @@ After import:
 - select PLA, PETG, or ABS as needed
 - review the machine and filament settings before slicing
 
-### Option B: Import everything in one session
+### Option C: Import multiple files in one session
 
 You can also select multiple JSON files during the import step and bring them in together. If Orca Slicer does not immediately show all imported presets, restart Orca Slicer and check the preset dropdowns again.
 
-## Which files should you import?
+## Which files should you import if you are doing it manually?
 
 ### If you run a 0.4 mm nozzle
 Import:
@@ -200,7 +252,7 @@ Import:
 
 If the profiles do not appear correctly after import:
 
-- make sure you imported the JSON files, not the folders alone
+- make sure you imported the actual bundle or JSON files, not just the folders
 - make sure the nozzle-specific printer and process profiles match each other
 - restart Orca Slicer after import
 - re-import one file at a time if Orca Slicer rejects a batch import
@@ -214,7 +266,8 @@ If a print starts incorrectly, stop immediately and verify:
 - bed behavior
 - first-layer height
 - machine start G-code
+- tool selection / tool behavior
 
 ## Final note
 
-Because the OrangeStorm Giga 4 Extruder mod is sold without a complete, polished official printer-profile-and-support path for Orca Slicer users, this repository is intended to save you from doing every bit of setup from zero. Use it as a foundation, validate everything on your own machine, and tune from there.
+Because the OrangeStorm Giga 4 Extruder mod is sold without a complete, polished official printer-profile-and-support path for Orca Slicer users, this repository is intended to save you from doing every bit of setup from zero. Whether you use the quick-start bundles or the individual files, validate everything on your own machine first and remember that all use is at your own risk.
